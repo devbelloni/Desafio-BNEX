@@ -5,7 +5,7 @@
 {% block content %}
 
 {% if user.is_authenticated %}
-        <h1>Bem-vindo, {{ user.username }}!</h1>
+        <h1>Bem-vindo, {{ user.first_name }} {{ user.last_name}}!</h1>
 <form action="{% url 'admin:logout' %}?next=/" method="post">
   {% csrf_token %}
   <button type="submit">Logout</button>
