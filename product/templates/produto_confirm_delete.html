@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block title %}Página Inicial - BNEX{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h1>Confirmar Exclusão</h1>
+    <h2>Você tem certeza que deseja excluir o produto "{{ object.nome }}"?</h2>
+    <form method="post">
+        {% csrf_token %}
+        <input type="submit" value="Confirmar Exclusão">
+    </form>
+        <a href="{% url 'produto-list' %}"><button onclick="">Cancelar</button></a>
+
+
+</div>
+{% endblock %}
+</html>

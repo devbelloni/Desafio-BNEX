@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block title %}Página Inicial - BNEX{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h1>Detalhes do Produto</h1>
+    <ul>
+        <li><strong>Nome:</strong> {{ object.nome }}</li>
+        <li><strong>Descrição:</strong> {{ object.descricao }}</li>
+        <li><strong>Valor:</strong> R$ {{ object.valor|floatformat:2 }}</li>
+    </ul>
+    <button onclick="window.history.back()">Voltar</button>
+    <button onclick="window.location.href = '/product/{{ produto.id }}/update/'">Alterar</button>
+    <button onclick="window.location.href = '/product/{{ produto.id }}/delete/'">Deletar</button>
+
+
+
+</div>
+{% endblock %}
+</html>
