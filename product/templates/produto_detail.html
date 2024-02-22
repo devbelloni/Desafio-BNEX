@@ -3,6 +3,9 @@
 {% block title %}Página Inicial - BNEX{% endblock %}
 
 {% block content %}
+
+{% if user.is_authenticated %}
+
 <div class="container">
     <h1>Detalhes do Produto</h1>
     <ul>
@@ -17,5 +20,9 @@
 
 
 </div>
+{% else %}
+    <h1>Por favor, faça <a href="/admin/login/?next=/"> login </a>para acessar este conteúdo.</h1>
+{% endif %}
+
 {% endblock %}
 </html>
